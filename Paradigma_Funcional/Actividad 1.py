@@ -7,7 +7,7 @@
 
 # 1.- Define los atareados mediante el filtro de la cantidad de tareas
 def definirAtareados(listaEmpleados: list):
-    return list(filter(lambda x: len(str(x[2]).split(" ")) > 1, listaEmpleados))
+    return list(filter(lambda empleado: len(str(empleado[2]).split(" ")) > 1, listaEmpleados))
 # Crea la lista de empleados
 listOf_Empleados = [
     ["Administrador", 34, "tarea1 tarea2 tarea3"],
