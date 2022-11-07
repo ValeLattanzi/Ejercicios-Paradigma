@@ -1,0 +1,1 @@
+# Archivo que facilita la comunicacion entre la vista y el modelo

@@ -1,3 +1,4 @@
+# Esta ventana se encarga de registrar los datos de la inscripcion de la academia
 # Se crea la ventana para que se ingresen los datos
 from tkinter import *
 import tkinter as tk
@@ -12,4 +13,5 @@ ventana.configure(background="light blue")
 # Crea los campos de texto con su label correspondiente
 Label(ventana, text="Registrar Inscripción", fg="dark blue", font="verdana 15", background="light blue").pack()
 lblAlumno = Label(ventana, text="Alumno:", background="light blue").place(x=120, y=60)
+entryAlumno = Entry(ventana).place(x=180, y=60)
 ventana.mainloop()
