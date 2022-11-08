@@ -3,3 +3,6 @@
 # Funcion que guarde la inscripcion en el txt
 def guardarInscripcion():
     return 0
+
+def obtenerEstado():
+    return "Presincripcion"
