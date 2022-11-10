@@ -11,19 +11,29 @@
 # el cual estará formado por: 
 # el primer nombre, la cantidad de letras del apellido y los primeros 3 dígitos de su DNI.
 
-def obtenerIdentificador(nombreCompleto: str, dni: str):
-    if nombreCompleto == "":
+def obtenerIdentificador(listOf_Socios: list, i: int = 0):
+    if listOf_Socios[i][0] == "":
         exit("El programa finalizó.")
     else:
         # En caso de que el dni este mal ingresado
-        if len(dni) < 7 or len(dni) > 8:
+        if len(listOf_Socios[i][1]) < 7 or len(listOf_Socios[i][1]) > 8:
             # Se ejecuta recursividad de esta misma funcion
-            obtenerIdentificador(nombreCompleto, str(input("Ingrese el DNI nuevamente: ")))
+            obtenerIdentificador(listOf_Socios[i][0], str(input("Ingrese el DNI nuevamente: ")))
         else:
-            print(list(nombreCompleto.split(" "))[0] + # Obtiene el primer nombre
+            print(list(listOf_Socios[i][0].split(" "))[0] + # Obtiene el primer nombre
                 # Obtiene la cantidad de letras del apellido
-                str(len(list(nombreCompleto.split(" "))[len(list(nombreCompleto.split(" "))) - 1])) + 
+                str(len(list(listOf_Socios[i][0].split(" "))[len(list(listOf_Socios[i][0].split(" "))) - 1])) + 
                 # Obtiene los primeros tres digitos del dni
-                dni[0 : 3])
+                listOf_Socios[i][1][0 : 3])
+    i += 1
+    if len(listOf_Socios) == i:
+        exit()
+    obtenerIdentificador(listOf_Socios, i)
 
-obtenerIdentificador("Valentino Lattanzi", "448992")
+listOf_Socios = []
+cantidadSocios = int(input("Ingrese la cantidad de socios: "))
+for fila in range(cantidadSocios):
+    listOf_Input = [input("Ingrese el nombre del socio: "), input("Ingrese el numero de documento: ")]
+    listOf_Socios.append(listOf_Input)
+
+obtenerIdentificador(listOf_Socios)
