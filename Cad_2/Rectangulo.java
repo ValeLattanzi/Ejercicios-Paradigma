@@ -1,6 +1,7 @@
-package Cad;
+package Cad_2;
 
 public class Rectangulo extends Figura {
+
     private int ancho;
     private int alto;
 
@@ -10,32 +11,40 @@ public class Rectangulo extends Figura {
         this.alto = alto;
     }
 
+    @Override
     public void dibujar() {
-        System.out.println(toString());
-    }
-
-    public double superficie() {
-        return this.alto * this.ancho;
+        System.out.println(this.toString());
     }
 
     @Override
-    public String toString() {
-        return "Rectangulo [origen=" + super.origen + ", ancho=" + ancho + ", alto=" + alto + "]";
+    public double superficie() {
+        return alto * ancho;
+    }
+
+    @Override
+    public void mover(int x, int y) {
+        super.mover(x, y);
     }
 
     public int getAncho() {
         return ancho;
     }
 
-    public void setAncho(int ancho) {
-        this.ancho = ancho;
-    }
-
     public int getAlto() {
         return alto;
+    }
+
+    @Override
+    public String toString() {
+        return "Rectangulo [origen=" + super.origen + " ancho=" + ancho + ", alto=" + alto + "]";
+    }
+
+    public void setAncho(int ancho) {
+        this.ancho = ancho;
     }
 
     public void setAlto(int alto) {
         this.alto = alto;
     }
+
 }
